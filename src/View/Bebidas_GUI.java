@@ -45,7 +45,7 @@ public class Bebidas_GUI extends javax.swing.JFrame {
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(jButton2);
-        jButton2.setBounds(10, 350, 170, 220);
+        jButton2.setBounds(220, 100, 170, 230);
 
         jButton3.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Coca (1).png"))); // NOI18N
@@ -53,7 +53,7 @@ public class Bebidas_GUI extends javax.swing.JFrame {
         jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(jButton3);
-        jButton3.setBounds(190, 100, 210, 230);
+        jButton3.setBounds(10, 380, 210, 230);
 
         jButton4.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Suco (1).png"))); // NOI18N
@@ -61,7 +61,7 @@ public class Bebidas_GUI extends javax.swing.JFrame {
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(jButton4);
-        jButton4.setBounds(10, 100, 170, 230);
+        jButton4.setBounds(10, 100, 200, 230);
 
         jButton6.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/botao-voltar.png"))); // NOI18N
@@ -70,6 +70,11 @@ public class Bebidas_GUI extends javax.swing.JFrame {
         jButton6.setContentAreaFilled(false);
         jButton6.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton6);
         jButton6.setBounds(0, 10, 130, 30);
 
@@ -87,6 +92,11 @@ public class Bebidas_GUI extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(400, 700));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        new Principal_GUI().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments

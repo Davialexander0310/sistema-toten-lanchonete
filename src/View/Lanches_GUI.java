@@ -88,6 +88,11 @@ public class Lanches_GUI extends javax.swing.JFrame {
         jButton6.setContentAreaFilled(false);
         jButton6.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton6);
         jButton6.setBounds(0, 10, 130, 30);
 
@@ -105,6 +110,11 @@ public class Lanches_GUI extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(400, 700));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        new Principal_GUI().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -61,7 +61,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="10" y="350" width="170" height="220"/>
+              <AbsoluteConstraints x="220" y="100" width="170" height="230"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -79,7 +79,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="190" y="100" width="210" height="230"/>
+              <AbsoluteConstraints x="10" y="380" width="210" height="230"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -97,7 +97,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="10" y="100" width="170" height="230"/>
+              <AbsoluteConstraints x="10" y="100" width="200" height="230"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -115,6 +115,9 @@
             <Property name="horizontalAlignment" type="int" value="10"/>
             <Property name="horizontalTextPosition" type="int" value="4"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="0" y="10" width="130" height="30"/>

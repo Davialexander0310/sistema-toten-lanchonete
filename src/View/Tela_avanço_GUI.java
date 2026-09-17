@@ -40,6 +40,11 @@ public class Tela_avanço_GUI extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 22)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Começar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1);
         jButton1.setBounds(240, 680, 230, 50);
 
@@ -61,6 +66,11 @@ public class Tela_avanço_GUI extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(700, 800));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        new Pergunta_GUI().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
