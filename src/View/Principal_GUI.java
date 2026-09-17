@@ -34,6 +34,7 @@ public class Principal_GUI extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
@@ -97,6 +98,21 @@ public class Principal_GUI extends javax.swing.JFrame {
         jPanel2.add(jButton5);
         jButton5.setBounds(10, 430, 180, 110);
 
+        jButton6.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/botao-voltar.png"))); // NOI18N
+        jButton6.setText("Voltar");
+        jButton6.setBorderPainted(false);
+        jButton6.setContentAreaFilled(false);
+        jButton6.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton6);
+        jButton6.setBounds(30, 740, 130, 30);
+
         jPanel1.add(jPanel2);
         jPanel2.setBounds(0, 0, 200, 800);
 
@@ -130,6 +146,10 @@ public class Principal_GUI extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(700, 800));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -172,6 +192,7 @@ public class Principal_GUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
