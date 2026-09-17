@@ -9,12 +9,12 @@ package View;
  *
  * @author Matheus
  */
-public class Bebidas_GUI extends javax.swing.JFrame {
+public class Lanches_GUI extends javax.swing.JFrame {
 
     /**
      * Creates new form Lanches_GUI
      */
-    public Bebidas_GUI() {
+    public Lanches_GUI() {
         initComponents();
     }
 
@@ -28,9 +28,11 @@ public class Bebidas_GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -39,29 +41,45 @@ public class Bebidas_GUI extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
-        jButton2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Garrafa_agua (1).png"))); // NOI18N
-        jButton2.setText("Água");
+        jButton1.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/xbacon-removebg-preview.png"))); // NOI18N
+        jButton1.setText("X Bacon");
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jPanel1.add(jButton1);
+        jButton1.setBounds(210, 70, 180, 180);
+
+        jButton2.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Xsalada-removebg-preview.png"))); // NOI18N
+        jButton2.setText("X Salada");
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(jButton2);
-        jButton2.setBounds(20, 350, 170, 220);
+        jButton2.setBounds(10, 460, 190, 180);
 
-        jButton3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Coca (1).png"))); // NOI18N
-        jButton3.setText("Refrigerante (Coca)");
+        jButton3.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lanche_de_frango-removebg-preview.png"))); // NOI18N
+        jButton3.setText("Lanche de frango");
         jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(jButton3);
-        jButton3.setBounds(200, 100, 191, 230);
+        jButton3.setBounds(10, 70, 190, 180);
 
-        jButton4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Suco (1).png"))); // NOI18N
-        jButton4.setText("Suco de laranja");
+        jButton4.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/xegg-removebg-preview.png"))); // NOI18N
+        jButton4.setText("X Egg");
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(jButton4);
-        jButton4.setBounds(20, 100, 170, 230);
+        jButton4.setBounds(10, 270, 190, 170);
+
+        jButton5.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Xpicanha-removebg-preview.png"))); // NOI18N
+        jButton5.setText("X Picanha");
+        jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jPanel1.add(jButton5);
+        jButton5.setBounds(210, 270, 180, 170);
 
         jButton6.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/botao-voltar.png"))); // NOI18N
@@ -77,11 +95,11 @@ public class Bebidas_GUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setSize(new java.awt.Dimension(400, 700));
@@ -105,29 +123,30 @@ public class Bebidas_GUI extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Bebidas_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Lanches_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Bebidas_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Lanches_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Bebidas_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Lanches_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Bebidas_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Lanches_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Bebidas_GUI().setVisible(true);
+                new Lanches_GUI().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
