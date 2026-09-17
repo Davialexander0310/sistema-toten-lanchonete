@@ -9,12 +9,12 @@ package View;
  *
  * @author Matheus
  */
-public class Pergunta extends javax.swing.JFrame {
+public class Pergunta_GUI extends javax.swing.JFrame {
 
     /**
      * Creates new form Pergunta
      */
-    public Pergunta() {
+    public Pergunta_GUI() {
         initComponents();
     }
 
@@ -55,16 +55,19 @@ public class Pergunta extends javax.swing.JFrame {
         jButton1.setBounds(7, 23, 130, 30);
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(0, 0, 480, 70);
+        jPanel2.setBounds(0, 0, 700, 70);
 
+        jButton2.setBackground(new java.awt.Color(204, 204, 204));
+        jButton2.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Saco-de-papel.png"))); // NOI18N
         jButton2.setText("Para levar");
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton2.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jPanel1.add(jButton2);
-        jButton2.setBounds(260, 340, 150, 160);
+        jButton2.setBounds(380, 330, 200, 170);
 
         jButton3.setBackground(new java.awt.Color(204, 204, 204));
+        jButton3.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/comida.png"))); // NOI18N
         jButton3.setText("Para comer aqui");
         jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -75,7 +78,7 @@ public class Pergunta extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton3);
-        jButton3.setBounds(50, 340, 150, 160);
+        jButton3.setBounds(100, 330, 190, 170);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -88,7 +91,7 @@ public class Pergunta extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(480, 800));
+        setSize(new java.awt.Dimension(700, 800));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -113,20 +116,21 @@ public class Pergunta extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Pergunta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pergunta_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Pergunta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pergunta_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Pergunta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pergunta_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Pergunta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pergunta_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Pergunta().setVisible(true);
+                new Pergunta_GUI().setVisible(true);
             }
         });
     }
