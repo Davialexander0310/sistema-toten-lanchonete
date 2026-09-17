@@ -9,12 +9,12 @@ package View;
  *
  * @author Matheus
  */
-public class Lanches_GUI extends javax.swing.JFrame {
+public class Combos extends javax.swing.JFrame {
 
     /**
-     * Creates new form Lanches_GUI
+     * Creates new form Combos
      */
-    public Lanches_GUI() {
+    public Combos() {
         initComponents();
     }
 
@@ -29,11 +29,9 @@ public class Lanches_GUI extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -42,44 +40,12 @@ public class Lanches_GUI extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         jButton1.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/xbacon-removebg-preview.png"))); // NOI18N
-        jButton1.setText("X Bacon");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Combo Giga Duplo.png"))); // NOI18N
+        jButton1.setText("Combo Giga Duplo");
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(jButton1);
-        jButton1.setBounds(210, 70, 180, 180);
-
-        jButton2.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Xsalada-removebg-preview.png"))); // NOI18N
-        jButton2.setText("X Salada");
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(jButton2);
-        jButton2.setBounds(10, 460, 190, 180);
-
-        jButton3.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lanche_de_frango-removebg-preview.png"))); // NOI18N
-        jButton3.setText("Lanche de frango");
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(jButton3);
-        jButton3.setBounds(10, 70, 190, 180);
-
-        jButton4.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Duplo Cheddar Melt.png"))); // NOI18N
-        jButton4.setText("Duplo Cheddar");
-        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(jButton4);
-        jButton4.setBounds(10, 270, 190, 170);
-
-        jButton5.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Xpicanha-removebg-preview.png"))); // NOI18N
-        jButton5.setText("X Picanha");
-        jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(jButton5);
-        jButton5.setBounds(210, 270, 180, 170);
+        jButton1.setBounds(30, 450, 330, 130);
 
         jButton6.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/botao-voltar.png"))); // NOI18N
@@ -89,7 +55,23 @@ public class Lanches_GUI extends javax.swing.JFrame {
         jButton6.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         jPanel1.add(jButton6);
-        jButton6.setBounds(0, 10, 130, 30);
+        jButton6.setBounds(0, 20, 130, 30);
+
+        jButton2.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/The bacon crown combo.png"))); // NOI18N
+        jButton2.setText("The bacon crown combo");
+        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jPanel1.add(jButton2);
+        jButton2.setBounds(30, 90, 330, 120);
+
+        jButton3.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Combo dourado.png"))); // NOI18N
+        jButton3.setText("Combo Dourado");
+        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jPanel1.add(jButton3);
+        jButton3.setBounds(30, 260, 330, 130);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -123,20 +105,20 @@ public class Lanches_GUI extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Lanches_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Combos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Lanches_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Combos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Lanches_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Combos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Lanches_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Combos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Lanches_GUI().setVisible(true);
+                new Combos().setVisible(true);
             }
         });
     }
@@ -145,8 +127,6 @@ public class Lanches_GUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

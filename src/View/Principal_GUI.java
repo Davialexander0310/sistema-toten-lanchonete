@@ -37,6 +37,8 @@ public class Principal_GUI extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -130,7 +132,19 @@ public class Principal_GUI extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(200, 680, 500, 120);
+        jScrollPane1.setBounds(200, 640, 500, 160);
+
+        jButton7.setBackground(new java.awt.Color(51, 255, 51));
+        jButton7.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        jButton7.setText("Avançar");
+        jPanel1.add(jButton7);
+        jButton7.setBounds(470, 570, 180, 60);
+
+        jButton8.setBackground(new java.awt.Color(255, 51, 51));
+        jButton8.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        jButton8.setText("Cancelar pedido");
+        jPanel1.add(jButton8);
+        jButton8.setBounds(230, 570, 180, 60);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -193,6 +207,8 @@ public class Principal_GUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

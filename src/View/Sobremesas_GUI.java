@@ -31,26 +31,46 @@ public class Sobremesas_GUI extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
         jPanel1.setLayout(null);
 
-        jButton1.setText("jButton1");
+        jButton1.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Casquinha Chocolate.png"))); // NOI18N
+        jButton1.setText("Casquinha Chocolate");
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(jButton1);
-        jButton1.setBounds(10, 270, 160, 160);
+        jButton1.setBounds(80, 310, 220, 160);
 
+        jButton2.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Casquinha Baunilha.png"))); // NOI18N
         jButton2.setText("Casquinha Baunilha");
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(jButton2);
-        jButton2.setBounds(10, 70, 170, 160);
+        jButton2.setBounds(80, 110, 220, 160);
 
-        jButton3.setText("jButton1");
+        jButton3.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Sundae caramelo.png"))); // NOI18N
+        jButton3.setText("Sundae caramelo");
+        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(jButton3);
-        jButton3.setBounds(210, 70, 160, 160);
+        jButton3.setBounds(80, 500, 220, 160);
+
+        jButton6.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/botao-voltar.png"))); // NOI18N
+        jButton6.setText("Voltar");
+        jButton6.setBorderPainted(false);
+        jButton6.setContentAreaFilled(false);
+        jButton6.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jPanel1.add(jButton6);
+        jButton6.setBounds(0, 10, 130, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -106,6 +126,7 @@ public class Sobremesas_GUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton6;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
