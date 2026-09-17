@@ -9,12 +9,12 @@ package View;
  *
  * @author Matheus
  */
-public class Acompanhamento_GUI extends javax.swing.JFrame {
+public class Sobremesas_GUI extends javax.swing.JFrame {
 
     /**
-     * Creates new form Acompanhamento_GUI
+     * Creates new form Sobremesas_GUI
      */
-    public Acompanhamento_GUI() {
+    public Sobremesas_GUI() {
         initComponents();
     }
 
@@ -31,59 +31,40 @@ public class Acompanhamento_GUI extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
-        jButton1.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Cebola-frita.png"))); // NOI18N
-        jButton1.setText("Cebola frita P");
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton1.setText("jButton1");
         jPanel1.add(jButton1);
-        jButton1.setBounds(210, 110, 180, 160);
+        jButton1.setBounds(10, 270, 160, 160);
 
-        jButton2.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Nuggets.png"))); // NOI18N
-        jButton2.setText("Nuggets 6 unid");
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Casquinha Baunilha.png"))); // NOI18N
+        jButton2.setText("Casquinha Baunilha");
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(jButton2);
-        jButton2.setBounds(10, 310, 180, 160);
+        jButton2.setBounds(10, 70, 170, 160);
 
-        jButton3.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Batata_frita__1.png"))); // NOI18N
-        jButton3.setText("Batata frita P");
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton3.setText("jButton1");
         jPanel1.add(jButton3);
-        jButton3.setBounds(10, 110, 180, 160);
-
-        jButton6.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/botao-voltar.png"))); // NOI18N
-        jButton6.setText("Voltar");
-        jButton6.setBorderPainted(false);
-        jButton6.setContentAreaFilled(false);
-        jButton6.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
-        jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jPanel1.add(jButton6);
-        jButton6.setBounds(0, 10, 130, 30);
+        jButton3.setBounds(210, 70, 160, 160);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        pack();
+        setSize(new java.awt.Dimension(400, 700));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -103,20 +84,20 @@ public class Acompanhamento_GUI extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Acompanhamento_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Sobremesas_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Acompanhamento_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Sobremesas_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Acompanhamento_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Sobremesas_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Acompanhamento_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Sobremesas_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Acompanhamento_GUI().setVisible(true);
+                new Sobremesas_GUI().setVisible(true);
             }
         });
     }
@@ -125,7 +106,6 @@ public class Acompanhamento_GUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton6;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

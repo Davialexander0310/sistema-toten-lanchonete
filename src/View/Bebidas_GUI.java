@@ -39,29 +39,29 @@ public class Bebidas_GUI extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
-        jButton2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Garrafa_agua (1).png"))); // NOI18N
         jButton2.setText("Água");
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(jButton2);
-        jButton2.setBounds(20, 350, 170, 220);
+        jButton2.setBounds(10, 350, 170, 220);
 
-        jButton3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Coca (1).png"))); // NOI18N
         jButton3.setText("Refrigerante (Coca)");
         jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(jButton3);
-        jButton3.setBounds(200, 100, 191, 230);
+        jButton3.setBounds(190, 100, 210, 230);
 
-        jButton4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jButton4.setFont(new java.awt.Font("Arial Black", 0, 16)); // NOI18N
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Suco (1).png"))); // NOI18N
         jButton4.setText("Suco de laranja");
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(jButton4);
-        jButton4.setBounds(20, 100, 170, 230);
+        jButton4.setBounds(10, 100, 170, 230);
 
         jButton6.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/botao-voltar.png"))); // NOI18N
