@@ -94,7 +94,7 @@ public class Bebidas_GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        new Principal_GUI().setVisible(true);
+        
         dispose();
     }//GEN-LAST:event_jButton6ActionPerformed
 
