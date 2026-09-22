@@ -44,6 +44,11 @@ public class Sobremesas_GUI extends javax.swing.JFrame {
         jButton1.setText("Casquinha Chocolate");
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1);
         jButton1.setBounds(80, 310, 220, 160);
 
@@ -52,6 +57,11 @@ public class Sobremesas_GUI extends javax.swing.JFrame {
         jButton2.setText("Casquinha Baunilha");
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2);
         jButton2.setBounds(80, 110, 220, 160);
 
@@ -60,6 +70,11 @@ public class Sobremesas_GUI extends javax.swing.JFrame {
         jButton3.setText("Sundae caramelo");
         jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton3);
         jButton3.setBounds(80, 500, 220, 160);
 
@@ -95,8 +110,51 @@ public class Sobremesas_GUI extends javax.swing.JFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
 
-        dispose();
+        new View.Principal_GUI().setVisible(true);
+this.dispose();
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+        Controller.ProdutoController pc = new Controller.ProdutoController();
+java.util.List<Model.Produto> lista = pc.buscarPorCategoria("SOBREMESA");
+for (Model.Produto p : lista) {
+    if (p.getNome().equals("Casquinha Baunilha")) {
+        Model.SessaoPedido.getPedido().adicionarItem(p);
+        break;
+    }
+}
+new View.Principal_GUI().setVisible(true);
+this.dispose();// TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        Controller.ProdutoController pc = new Controller.ProdutoController();
+java.util.List<Model.Produto> lista = pc.buscarPorCategoria("SOBREMESA");
+for (Model.Produto p : lista) {
+    if (p.getNome().equals("Casquinha Chocolate")) {
+        Model.SessaoPedido.getPedido().adicionarItem(p);
+        break;
+    }
+}
+new View.Principal_GUI().setVisible(true);
+this.dispose();// TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+
+        Controller.ProdutoController pc = new Controller.ProdutoController();
+java.util.List<Model.Produto> lista = pc.buscarPorCategoria("SOBREMESA");
+for (Model.Produto p : lista) {
+    if (p.getNome().equals("Sundae Caramelo")) {
+        Model.SessaoPedido.getPedido().adicionarItem(p);
+        break;
+    }
+}
+new View.Principal_GUI().setVisible(true);
+this.dispose();// TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments

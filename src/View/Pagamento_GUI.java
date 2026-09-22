@@ -16,6 +16,89 @@ public class Pagamento_GUI extends javax.swing.JFrame {
      */
     public Pagamento_GUI() {
         initComponents();
+        carregarPedido();
+    }
+    
+    private void gerarPDF(String senha) {
+    try {
+        String caminho = System.getProperty("user.home") + 
+            "/Desktop/pedido_" + senha.replace("#", "") + ".pdf";
+
+        com.itextpdf.text.Document documento = 
+            new com.itextpdf.text.Document();
+        com.itextpdf.text.pdf.PdfWriter.getInstance(
+            documento, new java.io.FileOutputStream(caminho));
+
+        documento.open();
+
+        // Título
+        com.itextpdf.text.Font fonteTitulo = new com.itextpdf.text.Font(
+            com.itextpdf.text.Font.FontFamily.HELVETICA, 20,
+            com.itextpdf.text.Font.BOLD);
+        documento.add(new com.itextpdf.text.Paragraph(
+            "QuickBite — Seu Lanche, do Seu Jeito", fonteTitulo));
+        documento.add(new com.itextpdf.text.Paragraph(" "));
+
+        // Senha
+        com.itextpdf.text.Font fonteSenha = new com.itextpdf.text.Font(
+            com.itextpdf.text.Font.FontFamily.HELVETICA, 16,
+            com.itextpdf.text.Font.BOLD);
+        documento.add(new com.itextpdf.text.Paragraph(
+            "Senha: " + senha, fonteSenha));
+        documento.add(new com.itextpdf.text.Paragraph(" "));
+
+        // Tipo de consumo
+        documento.add(new com.itextpdf.text.Paragraph(
+            "Tipo: " + Model.SessaoPedido.getPedido().getTipoConsumo()));
+        documento.add(new com.itextpdf.text.Paragraph(
+            "Pagamento: " + Model.SessaoPedido.getFormaPagamento()));
+        documento.add(new com.itextpdf.text.Paragraph(" "));
+
+        // Itens
+        documento.add(new com.itextpdf.text.Paragraph("Itens do pedido:"));
+        for (Model.Produto p : Model.SessaoPedido.getPedido().getItens()) {
+            documento.add(new com.itextpdf.text.Paragraph(
+                "  - " + p.getNome() + 
+                "  (" + String.format("R$ %.2f", p.getPreco()) + ")"));
+        }
+        documento.add(new com.itextpdf.text.Paragraph(" "));
+
+        // Total
+        com.itextpdf.text.Font fonteTotal = new com.itextpdf.text.Font(
+            com.itextpdf.text.Font.FontFamily.HELVETICA, 14,
+            com.itextpdf.text.Font.BOLD);
+        documento.add(new com.itextpdf.text.Paragraph(
+            "Total: " + String.format("R$ %.2f", 
+            Model.SessaoPedido.getPedido().calcularTotal()), fonteTotal));
+
+        documento.close();
+
+        javax.swing.JOptionPane.showMessageDialog(this,
+            "Pedido confirmado!\nSenha: " + senha + 
+            "\nComprovante salvo na Área de Trabalho.");
+
+    } catch (Exception e) {
+        e.printStackTrace();
+        javax.swing.JOptionPane.showMessageDialog(this,
+            "Erro ao gerar PDF: " + e.getMessage());
+    }
+}
+
+    private void carregarPedido() {
+        javax.swing.table.DefaultTableModel modelo
+                = (javax.swing.table.DefaultTableModel) jTable1.getModel();
+        modelo.setRowCount(0);
+
+        for (Model.Produto p : Model.SessaoPedido.getPedido().getItens()) {
+            modelo.addRow(new Object[]{
+                p.getNome(),
+                p.getCategoria(),
+                String.format("R$ %.2f", p.getPreco())
+            });
+        }
+
+        double total = Model.SessaoPedido.getPedido().calcularTotal();
+        totalTxt.setText(String.format("R$ %.2f", total));
     }
 
     /**
@@ -40,8 +123,9 @@ public class Pagamento_GUI extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        a = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        totalTxt = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -108,12 +192,22 @@ public class Pagamento_GUI extends javax.swing.JFrame {
         jButton8.setBackground(new java.awt.Color(255, 51, 51));
         jButton8.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         jButton8.setText("Cancelar pedido");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton8);
         jButton8.setBounds(60, 710, 220, 60);
 
         jButton7.setBackground(new java.awt.Color(51, 255, 51));
         jButton7.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         jButton7.setText("Confirmar Pagamento");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton7);
         jButton7.setBounds(390, 710, 230, 60);
 
@@ -122,6 +216,11 @@ public class Pagamento_GUI extends javax.swing.JFrame {
         jButton2.setText("Dinheiro");
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2);
         jButton2.setBounds(440, 490, 140, 120);
 
@@ -130,6 +229,11 @@ public class Pagamento_GUI extends javax.swing.JFrame {
         jButton3.setText("Pix");
         jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton3);
         jButton3.setBounds(90, 490, 140, 120);
 
@@ -138,20 +242,29 @@ public class Pagamento_GUI extends javax.swing.JFrame {
         jButton4.setText("Cartão");
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton4);
         jButton4.setBounds(260, 490, 140, 120);
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel3.setLayout(null);
+        a.setBackground(new java.awt.Color(255, 255, 255));
+        a.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        a.setLayout(null);
 
-        jLabel4.setFont(new java.awt.Font("Arial", 0, 25)); // NOI18N
-        jLabel4.setText("Total:");
-        jPanel3.add(jLabel4);
-        jLabel4.setBounds(10, 20, 70, 29);
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 25)); // NOI18N
+        jLabel5.setText("Total:");
+        a.add(jLabel5);
+        jLabel5.setBounds(10, 20, 70, 29);
 
-        jPanel1.add(jPanel3);
-        jPanel3.setBounds(70, 370, 240, 60);
+        totalTxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        a.add(totalTxt);
+        totalTxt.setBounds(130, 10, 80, 40);
+
+        jPanel1.add(a);
+        a.setBounds(70, 370, 240, 60);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -172,6 +285,73 @@ public class Pagamento_GUI extends javax.swing.JFrame {
         new Principal_GUI().setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+
+        Model.SessaoPedido.setFormaPagamento("PIX");
+javax.swing.JOptionPane.showMessageDialog(this, "Pagamento via PIX selecionado!");// TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+
+        Model.SessaoPedido.setFormaPagamento("CARTAO");
+javax.swing.JOptionPane.showMessageDialog(this, "Pagamento via Cartão selecionado!");// TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+        Model.SessaoPedido.setFormaPagamento("DINHEIRO");
+javax.swing.JOptionPane.showMessageDialog(this, "Pagamento em Dinheiro selecionado!");// TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+
+        int confirmar = javax.swing.JOptionPane.showConfirmDialog(this,
+    "Deseja cancelar o pedido?", "Cancelar",
+    javax.swing.JOptionPane.YES_NO_OPTION);
+if (confirmar == javax.swing.JOptionPane.YES_OPTION) {
+    Model.SessaoPedido.limpar();
+    Model.SessaoPedido.novoPedido();
+    new View.Tela_avanço_GUI().setVisible(true);
+    this.dispose();
+}// TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+
+        if (Model.SessaoPedido.getFormaPagamento() == null) {
+    javax.swing.JOptionPane.showMessageDialog(this,
+        "Selecione uma forma de pagamento!");
+    return;
+}
+
+// Gera a senha
+Controller.PedidoController pc = new Controller.PedidoController();
+String senha = pc.gerarSenha();
+Model.SessaoPedido.getPedido().setSenha(senha);
+Model.SessaoPedido.getPedido().setFormaPagamento(
+    Model.SessaoPedido.getFormaPagamento());
+
+// Salva no banco
+int id = pc.salvarPedido(Model.SessaoPedido.getPedido());
+
+if (id == -1) {
+    javax.swing.JOptionPane.showMessageDialog(this,
+        "Erro ao salvar pedido. Tente novamente.");
+    return;
+}
+
+// Gera o PDF
+gerarPDF(senha);
+
+// Reseta a sessão
+Model.SessaoPedido.limpar();
+Model.SessaoPedido.novoPedido();
+
+// Volta pra tela inicial
+new View.Tela_avanço_GUI().setVisible(true);
+this.dispose();// TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -209,6 +389,7 @@ public class Pagamento_GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JPanel a;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -218,11 +399,11 @@ public class Pagamento_GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JLabel totalTxt;
     // End of variables declaration//GEN-END:variables
 }

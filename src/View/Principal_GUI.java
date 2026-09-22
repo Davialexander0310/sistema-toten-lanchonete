@@ -16,6 +16,24 @@ public class Principal_GUI extends javax.swing.JFrame {
      */
     public Principal_GUI() {
         initComponents();
+         if (Model.SessaoPedido.getPedido() == null) {
+        Model.SessaoPedido.novoPedido();
+    }
+    atualizarTabela();
+    }
+
+    private void atualizarTabela() {
+        javax.swing.table.DefaultTableModel modelo
+                = (javax.swing.table.DefaultTableModel) jTable1.getModel();
+        modelo.setRowCount(0); // limpa a tabela
+
+        for (Model.Produto p : Model.SessaoPedido.getPedido().getItens()) {
+            modelo.addRow(new Object[]{
+                p.getNome(),
+                p.getCategoria(),
+                String.format("R$ %.2f", p.getPreco())
+            });
+        }
     }
 
     /**
@@ -145,15 +163,23 @@ public class Principal_GUI extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ITEM", "CATEGORIA", "PREÇO"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jPanel1.add(jScrollPane1);
@@ -173,6 +199,11 @@ public class Principal_GUI extends javax.swing.JFrame {
         jButton8.setBackground(new java.awt.Color(255, 51, 51));
         jButton8.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         jButton8.setText("Cancelar pedido");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton8);
         jButton8.setBounds(230, 570, 180, 60);
 
@@ -217,9 +248,28 @@ public class Principal_GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        new Pagamento_GUI().setVisible(true);
-        dispose();
+        if (Model.SessaoPedido.getPedido().getItens().isEmpty()) {
+            javax.swing.JOptionPane.showMessageDialog(this,
+                    "Adicione pelo menos um item antes de avançar!");
+            return;
+        }
+        View.Pagamento_GUI tela = new View.Pagamento_GUI();
+        tela.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+
+        int confirmar = javax.swing.JOptionPane.showConfirmDialog(this,
+                "Deseja cancelar o pedido?", "Cancelar",
+                javax.swing.JOptionPane.YES_NO_OPTION);
+        if (confirmar == javax.swing.JOptionPane.YES_OPTION) {
+            Model.SessaoPedido.limpar();
+            Model.SessaoPedido.novoPedido();
+            new View.Tela_avanço_GUI().setVisible(true);
+            this.dispose();
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments

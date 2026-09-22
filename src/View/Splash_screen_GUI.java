@@ -16,6 +16,16 @@ public class Splash_screen_GUI extends javax.swing.JFrame {
      */
     public Splash_screen_GUI() {
         initComponents();
+
+        javax.swing.Timer timer = new javax.swing.Timer(3000, new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+                new View.Tela_avanço_GUI().setVisible(true);
+                dispose();
+            }
+        });
+        timer.setRepeats(false);
+        timer.start();
     }
 
     /**

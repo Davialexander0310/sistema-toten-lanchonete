@@ -17,7 +17,14 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        new Tela_avanço_GUI().setVisible(true);
+        Model.SessaoPedido.novoPedido();
+        
+        // Abre a splash screen
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new View.Splash_screen_GUI().setVisible(true);
+            }
+        });
     }
     
 }

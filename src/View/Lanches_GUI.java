@@ -46,6 +46,11 @@ public class Lanches_GUI extends javax.swing.JFrame {
         jButton1.setText("X Bacon");
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1);
         jButton1.setBounds(210, 70, 180, 180);
 
@@ -54,6 +59,11 @@ public class Lanches_GUI extends javax.swing.JFrame {
         jButton2.setText("X Salada");
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2);
         jButton2.setBounds(10, 460, 190, 180);
 
@@ -62,6 +72,11 @@ public class Lanches_GUI extends javax.swing.JFrame {
         jButton3.setText("Lanche de frango");
         jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton3);
         jButton3.setBounds(10, 70, 190, 180);
 
@@ -70,6 +85,11 @@ public class Lanches_GUI extends javax.swing.JFrame {
         jButton4.setText("Duplo Cheddar");
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton4);
         jButton4.setBounds(10, 270, 190, 170);
 
@@ -78,6 +98,11 @@ public class Lanches_GUI extends javax.swing.JFrame {
         jButton5.setText("X Picanha");
         jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton5);
         jButton5.setBounds(210, 270, 180, 170);
 
@@ -112,9 +137,79 @@ public class Lanches_GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-
-        dispose();
+        new View.Principal_GUI().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+
+        Controller.ProdutoController pc = new Controller.ProdutoController();
+        java.util.List<Model.Produto> lista = pc.buscarPorCategoria("LANCHE");
+        for (Model.Produto p : lista) {
+            if (p.getNome().equals("Lanche de Frango")) {
+                Model.SessaoPedido.getPedido().adicionarItem(p);
+                break;
+            }
+        }
+        new View.Principal_GUI().setVisible(true);
+        this.dispose();// TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        Controller.ProdutoController pc = new Controller.ProdutoController();
+        java.util.List<Model.Produto> lista = pc.buscarPorCategoria("LANCHE");
+        for (Model.Produto p : lista) {
+            if (p.getNome().equals("X Bacon")) {
+                Model.SessaoPedido.getPedido().adicionarItem(p);
+                break;
+            }
+        }
+        new View.Principal_GUI().setVisible(true);
+        this.dispose();// TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+
+        Controller.ProdutoController pc = new Controller.ProdutoController();
+        java.util.List<Model.Produto> lista = pc.buscarPorCategoria("LANCHE");
+        for (Model.Produto p : lista) {
+            if (p.getNome().equals("Duplo Cheddar")) {
+                Model.SessaoPedido.getPedido().adicionarItem(p);
+                break;
+            }
+        }
+        new View.Principal_GUI().setVisible(true);
+        this.dispose();// TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+
+        Controller.ProdutoController pc = new Controller.ProdutoController();
+        java.util.List<Model.Produto> lista = pc.buscarPorCategoria("LANCHE");
+        for (Model.Produto p : lista) {
+            if (p.getNome().equals("X Picanha")) {
+                Model.SessaoPedido.getPedido().adicionarItem(p);
+                break;
+            }
+        }
+        new View.Principal_GUI().setVisible(true);
+        this.dispose();// TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+        Controller.ProdutoController pc = new Controller.ProdutoController();
+        java.util.List<Model.Produto> lista = pc.buscarPorCategoria("LANCHE");
+        for (Model.Produto p : lista) {
+            if (p.getNome().equals("X Salada")) {
+                Model.SessaoPedido.getPedido().adicionarItem(p);
+                break;
+            }
+        }
+        new View.Principal_GUI().setVisible(true);
+        this.dispose();// TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
