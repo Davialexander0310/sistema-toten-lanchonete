@@ -1,0 +1,56 @@
+CREATE DATABASE IF NOT EXISTS quickbite CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+USE quickbite;
+
+-- Tabela de produtos (lanches, bebidas, sobremesas, acompanhamentos, combos)
+CREATE TABLE produto (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    categoria ENUM('LANCHE','BEBIDA','SOBREMESA','ACOMPANHAMENTO','COMBO') NOT NULL,
+    preco DECIMAL(6,2) NOT NULL
+);
+
+-- Tabela de pedidos
+CREATE TABLE pedido (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tipo_consumo ENUM('LOCAL','LEVAR') NOT NULL,
+    forma_pagamento ENUM('PIX','CARTAO','DINHEIRO'),
+    total DECIMAL(8,2),
+    senha VARCHAR(10),
+    status ENUM('ABERTO','CONFIRMADO','CANCELADO') DEFAULT 'ABERTO',
+    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Tabela de itens do pedido (relação pedido <-> produto)
+CREATE TABLE item_pedido (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    pedido_id INT NOT NULL,
+    produto_id INT NOT NULL,
+    FOREIGN KEY (pedido_id) REFERENCES pedido(id) ON DELETE CASCADE,
+    FOREIGN KEY (produto_id) REFERENCES produto(id)
+);
+
+-- Produtos iniciais (os mesmos que aparecem nas telas)
+INSERT INTO produto (nome, categoria, preco) VALUES
+-- Lanches
+('Lanche de Frango',   'LANCHE', 22.90),
+('X Bacon',            'LANCHE', 27.90),
+('Duplo Cheddar',      'LANCHE', 29.90),
+('X Picanha',          'LANCHE', 34.90),
+('X Salada',           'LANCHE', 24.90),
+-- Acompanhamentos
+('Batata Frita P',     'ACOMPANHAMENTO', 10.90),
+('Cebola Frita P',     'ACOMPANHAMENTO', 10.90),
+('Nuggets 6 unid',     'ACOMPANHAMENTO', 12.90),
+-- Bebidas
+('Suco de Laranja',    'BEBIDA', 9.90),
+('Água',               'BEBIDA', 5.00),
+('Refrigerante (Coca)','BEBIDA', 8.90),
+-- Sobremesas
+('Casquinha Baunilha', 'SOBREMESA', 6.90),
+('Casquinha Chocolate','SOBREMESA', 6.90),
+('Sundae Caramelo',    'SOBREMESA', 9.90),
+-- Combos
+('The Bacon Crown Combo','COMBO', 45.90),
+('Combo Dourado',        'COMBO', 39.90),
+('Combo Giga Duplo',     'COMBO', 52.90);
